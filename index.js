@@ -11,7 +11,7 @@ app.engine('hbs', hbs({
     partialsDir: path.join(__dirname, 'views', 'partials')
 }));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engin', '.hbs');
+app.set('view engine', '.hbs');
 app.get('/', async(req, res) => {
     let data = await getWeather();
     let name = data.name;
