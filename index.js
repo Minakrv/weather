@@ -1,13 +1,9 @@
-const http = require('http');
-const hostname = "localhost";
-const port = 3000;
-const server = http.createServer((req, res) => {
-    console.log(`Request made ${req.url}`);
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write('Hello World');
-    res.end();
-})
-server.listen(port, hostname, () => {
-    console.log(`Server running at port http://${hostname}:${port}`);
-});
+const fetch = require('node-fetch');
+const url = `http://api.openweathermap.org/data/2.5/weather?q=Manchester&appid=2df125ed5ea250c03e42147f1dd09c77&units=metric`;
 
+const getWeather = async()=> {
+    let data = await fetch(url);
+    console.log(await data.json());
+};
+
+getWeather();
