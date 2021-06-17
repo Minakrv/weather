@@ -15,8 +15,10 @@ app.set('view engine', '.hbs');
 app.get('/', async(req, res) => {
     let data = await getWeather();
     let name = data.name;
+    let description = data.weather[0].description;
     let temp = data.main.temp;
-    res.render('index', {name, temp});
+    let feels_like = data.main.feels_like;
+    res.render('index', {name, data:{description, temp, feels_like} });
 });
 app.get('/weather', (req, res)=>{
     res.render('weather');
