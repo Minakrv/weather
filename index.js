@@ -28,9 +28,6 @@ app.use('/weather', weatherRouter);
 app.use('*', errRouter);
 
 
-
-
-
 app.listen(process.env.port || 5000, () => {
     console.log("App is online")
     });
