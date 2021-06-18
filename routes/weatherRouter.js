@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const getWeather = require('../lib/getWeather');
+const getWeather = require('../lib/getweather');
 
 router.get("/", (req, res) => {
     res.render("weather");
